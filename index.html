@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JFY MULTIPURPOSE TECHNOLOGIES - Jerry Frankline Yudaha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+    /* --- 🎨 COLOR PALETTE & GLOBAL STYLES --- */
+    :root {
+        --color-dark: #121212;
+        --color-background: #0A0A0A;
+        --color-primary-green: #39FF14; /* Electric Green - Action/Highlight */
+        --color-secondary-purple: #E065E0; /* Cyber Purple - Accent/Links */
+        --color-text-light: #EDEDED;
+        --color-text-dim: #999999;
+        --font-stack: 'Arial', sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: var(--font-stack);
+    }
+
+    body {
+        background-color: var(--color-background);
+        color: var(--color-text-light);
+        line-height: 1.6;
+        scroll-behavior: smooth;
+    }
+
+    /* Utility Class for Colorful Text */
+    .color-green { color: var(--color-primary-green); }
+    .color-purple { color: var(--color-secondary-purple); }
+
+    section {
+        padding: 80px 5%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    h1, h2, h3 {
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        font-size: 2.5em;
+        text-align: center;
+        border-bottom: 3px solid var(--color-secondary-purple);
+        display: inline-block;
+        padding-bottom: 10px;
+        margin: 0 auto 50px auto;
+    }
+
+    /* --- 🔝 NAVIGATION --- */
+    header {
+        background-color: var(--color-dark);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 5%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+        font-size: 1.5em;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: var(--color-primary-green);
+    }
+
+    nav a {
+        color: var(--color-text-light);
+        text-decoration: none;
+        margin-left: 25px;
+        font-weight: 500;
+        transition: color 0.3s, border-bottom 0.3s;
+        padding-bottom: 5px;
+    }
+
+    nav a:hover {
+        color: var(--color-secondary-purple);
+        border-bottom: 2px solid var(--color-primary-green);
+    }
+
+    /* --- 🚀 HERO SECTION --- */
+    #home {
+        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://picsum.photos/1920/1080?random=1') no-repeat center center/cover; /* Placeholder Image */
+        text-align: center;
+        min-height: 100vh;
+    }
+
+    #home h1 {
+        font-size: 4em;
+        margin-bottom: 15px;
+        letter-spacing: 2px;
+        text-shadow: 0 0 10px var(--color-primary-green);
+    }
+
+    #home p {
+        font-size: 1.5em;
+        margin-bottom: 40px;
+        color: var(--color-text-dim);
+    }
+
+    .cta-button {
+        display: inline-block;
+        background-color: var(--color-primary-green);
+        color: var(--color-background);
+        padding: 12px 30px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.3s;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+    }
+
+    lol.cta-button:hover {
+        background-color: var(--color-secondary-purple);
+        color: var(--color-text-light);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(224, 101, 224, 0.4);
+    }
+
+    /* --- 👨‍💻 ABOUT ME --- */
+    #about {
+        background-color: var(--color-dark);
+    }
+    
+    .about-content {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        text-align: left;
+        margin-bottom: 40px;
+    }
+
+    .profile-pic {
+        /* Placeholder styling */
+        min-width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid var(--color-primary-green);
+        box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+        background-color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3em;
+        color: var(--color-secondary-purple);
+    }
+
+    .bio-text h3 {
+        color: var(--color-secondary-purple);
+        font-size: 1.8em;
+        margin-top: 0;
+    }
+    
+    .journey-box {
+        margin-top: 40px;
+        padding: 30px;
+        background-color: #1a1a1a;
+        border-left: 5px solid var(--color-secondary-purple);
+        box-shadow: 0 0 15px rgba(224, 101, 224, 0.1);
+    }
+    
+    /* Tech Stack Styling */
+    .tech-stack {
+        text-align: center;
+        margin-top: 60px;
+    }
+    .tech-stack-icons {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+    .tech-stack-icons i {
+        font-size: 2.5em;
+        color: var(--color-primary-green);
+        transition: color 0.3s;
+        margin-bottom: 10px;
+    }
+    .tech-stack-icons i:hover {
+        color: var(--color-secondary-purple);
+    }
+    .tech-stack-label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.8em;
+        color: var(--color-text-dim);
+    }
+
+
+    /* --- 🛠️ SERVICES & PRODUCTS --- */
+    #services {
+        background-color: #1a1a1a;
+        min-height: auto;
+    }
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        width: 100%;
+    }
+    .service-card {
+        background-color: var(--color-dark);
+        padding: 30px;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid var(--color-primary-green);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(57, 255, 20, 0.3);
+    }
+    .service-card i {
+        font-size: 3em;
+        color: var(--color-secondary-purple);
+        margin-bottom: 15px;
+    }
+    .service-card h3 {
+        color: var(--color-primary-green);
+    }
+
+
+    /* --- 🎨 PORTFOLIO --- */
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        width: 100%;
+    }
+
+    .portfolio-item {
+        background-color: var(--color-dark);
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid var(--color-secondary-purple);
+        box-shadow: 0 0 15px rgba(57, 255, 20, 0.1);
+        transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        text-align: center;
+    }
+    .portfolio-item:hover {
+        transform: translateY(-5px);
+        border-color: var(--color-primary-green);
+        box-shadow: 0 5px 20px rgba(57, 255, 20, 0.3);
+    }
+    .portfolio-item h3 { color: var(--color-primary-green); }
+    .portfolio-item p { color: var(--color-text-dim); }
+
+    /* --- 🎹 MUSIC & INTERESTS --- */
+    #music {
+        background-color: var(--color-dark);
+        min-height: auto;
+    }
+    
+    .music-content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin-top: 40px;
+    }
+    
+    .piano-pic {
+        /* Placeholder styling */
+        width: 40%;
+        max-width: 400px;
+        min-width: 300px;
+        height: 250px; 
+        border-radius: 10px;
+        border: 3px solid var(--color-secondary-purple);
+        box-shadow: 0 0 15px rgba(224, 101, 224, 0.4);
+        background-color: #1a1a1a; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        font-size: 4em;
+        color: var(--color-primary-green);
+    }
+    
+    .music-text h3 {
+        color: var(--color-primary-green);
+    }
+    
+    .music-text p {
+        margin-bottom: 20px;
+    }
+
+    .music-cta {
+        background-color: var(--color-secondary-purple);
+        color: var(--color-dark);
+    }
+
+    .interests-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        margin-top: 40px;
+        text-align: center;
+    }
+    .interest-item i {
+        font-size: 2em;
+        color: var(--color-secondary-purple);
+        margin-bottom: 5px;
+    }
+    
+    /* --- 💬 TESTIMONIALS & JOIN US & CONTACT (Additional Styles) --- */
+    
+    #testimonials {
+        background-color: #1a1a1a;
+        min-height: auto;
+    }
+    
+    .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .testimonial-card {
+        background-color: var(--color-dark);
+        padding: 25px;
+        border-radius: 8px;
+        border-left: 5px solid var(--color-primary-green);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+    
+    .quote-icon {
+        font-size: 1.5em;
+        color: var(--color-secondary-purple);
+        margin-bottom: 10px;
+    }
+    
+    .testimonial-card p {
+        font-style: italic;
+        color: var(--color-text-light);
+        margin-bottom: 15px;
+    }
+    
+    .testimonial-card span {
+        display: block;
+        text-align: right;
+        font-weight: bold;
+        color: var(--color-primary-green);
+    }
+
+    #join {
+        min-height: auto;
+    }
+
+    .join-options {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+    
+    .option-card {
+        background-color: #1a1a1a;
+        padding: 25px;
+        border-radius: 8px;
+        text-align: center;
+        width: 200px;
+        border: 1px solid var(--color-secondary-purple);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .option-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(57, 255, 20, 0.2);
+    }
+    
+    .option-card i {
+        font-size: 3em;
+        color: var(--color-primary-green);
+        margin-bottom: 15px;
+    }
+    
+    .option-card h3 {
+        color: var(--color-secondary-purple);
+        margin-bottom: 10px;
+    }
+
+    /* --- CONTACT FORM STYLES --- */
+    #contact {
+        background-color: var(--color-dark);
+    }
+    
+    .contact-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        box-shadow: 0 0 25px rgba(57, 255, 20, 0.1);
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: var(--color-primary-green);
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #333;
+        border-radius: 5px;
+        background-color: var(--color-dark);
+        color: var(--color-text-light);
+        font-size: 1em;
+        transition: border-color 0.3s;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+        border-color: var(--color-secondary-purple);
+        outline: none;
+    }
+    
+    .form-group textarea {
+        resize: vertical;
+        min-height: 150px;
+    }
+    
+    .submit-button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+        background-color: var(--color-dark);
+        padding: 30px 5%;
+        text-align: center;
+        border-top: 3px solid var(--color-primary-green);
+    }
+
+    footer a {
+        color: var(--color-secondary-purple);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    footer a:hover {
+        color: var(--color-primary-green);
+    }
+
+    .contact-footer-info {
+        margin-bottom: 20px;
+    }
+
+    .social-links {
+        margin-bottom: 20px;
+    }
+
+    .social-links a {
+        font-size: 1.8em;
+        margin: 0 10px;
+        color: var(--color-text-dim);
+    }
+
+    .social-links a:hover {
+        color: var(--color-primary-green);
+    }
+
+
+    /* --- MEDIA QUERIES (Responsiveness) --- */
+    @media (max-width: 768px) {
+        #home h1 { font-size: 3em; }
+        header { flex-direction: column; }
+        nav { margin-top: 15px; }
+        nav a { margin: 0 10px; }
+        .about-content { flex-direction: column; text-align: center; }
+        .profile-pic { margin-bottom: 20px; }
+        .join-options { flex-direction: column; align-items: center; }
+        .option-card { width: 90%; max-width: 300px; }
+        .music-content { flex-direction: column; }
+        .piano-pic { width: 80%; min-width: unset; margin-bottom: 20px; }
+    }
+</style>
+
+</head>
+<body>
+
+<header>
+    <div class="logo">JFY <span class="color-purple">TECHNOLOGIES</span></div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#music">Interests</a>
+        <a href="#join">Join Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="home">
+    <h1>
+        <span class="color-green">DESIGN</span> YOUR DIGITAL UNIVERSE
+    </h1>
+    <p>
+        JFY MULTIPURPOSE TECHNOLOGIES: Crafting next-level solutions with code and creativity.
+    </p>
+    <a href="#services" class="cta-button">Explore Our Services</a>
+</section>
+
+<section id="about">
+    <h2>About <span class="color-green">The CEO</span></h2>
+    
+    <div class="about-content">
+        <div class="profile-pic">
+             <i class="fas fa-user-circle"></i>
+        </div> <div class="bio-text">
+            <h3>Jerry Frankline Yudaha | 14 Years Young</h3>
+            <p>
+                Hello! I'm Jerry Frankline Yudaha (JFY), a 14-year-old developer, designer, and entrepreneur dedicated to building the future. I am the CEO of JFY MULTIPURPOSE TECHNOLOGIES, driven by the logic of code and the creativity of design. I believe that integrating technical rigor with artistic passion is the key to multipurpose solutions.
+            </p>
+            <div class="journey-box">
+                <h3 class="color-purple">My STEM Journey & Coding Foundations</h3>
+                <p>
+                    My journey began with the joy of creation on Scratch. I have since dedicated myself to learning: HTML, CSS, JS, and PYTHON. I possess a deep interest in Mathematics and Integrated Science, which fuels my logical approach to software engineering.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tech-stack">
+        <h3 class="color-green">My Core Tech Stack</h3>
+        <div class="tech-stack-icons">
+            <div class="tech-stack-label"><i class="fab fa-html5"></i> HTML</div>
+            <div class="tech-stack-label"><i class="fab fa-css3-alt"></i> CSS</div>
+            <div class="tech-stack-label"><i class="fab fa-js-square"></i> JavaScript</div>
+            <div class="tech-stack-label"><i class="fab fa-python"></i> Python</div>
+            <div class="tech-stack-label"><i class="fas fa-square-root-variable"></i> Math</div>
+            <div class="tech-stack-label"><i class="fas fa-atom"></i> Science</div>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <h2>Our Multi-Purpose <span class="color-purple">Services</span></h2>
+    <p style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+        We design a variety of high-quality digital products for clients, combining technical skill with modern aesthetics.
+    </p>
+    <div class="services-grid">
+        
+        <div class="service-card">
+            <i class="fas fa-desktop"></i>
+            <h3>Web Design & Apps</h3>
+            <p>Developing fast, responsive, and modern websites and app interfaces.</p>
+        </div>
+        
+        <div class="service-card">
+            <i class="fas fa-id-badge"></i>
+            <h3>Logo Design & Branding</h3>
+            <p>Creating unique, memorable brand identities and style guides.</p>
+        </div>
+        
+        <div class="service-card">
+            <i class="fas fa-bullhorn"></i>
+            <h3>Advertisement</h3>
+            <p>Creating digital ad content and strategies to boost visibility.</p>
+        </div>
+        
+        <div class="service-card">
+            <i class="fas fa-video"></i>
+            <h3>Video Editing</h3>
+            <p>Professional video editing services for social media and content creation.</p>
+        </div>
+        
+        <div class="service-card">
+            <i class="fas fa-print"></i>
+            <h3>Posters & Cards</h3>
+            <p>Easy-to-use services for professional digital posters and cards.</p>
+        </div>
+        
+        <div class="service-card">
+            <i class="fas fa-undo-alt"></i>
+            <h3>System Recovery</h3>
+            <p>Assistance with basic system troubleshooting and data recovery needs.</p>
+        </div>
+
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="#contact" class="cta-button">Request a Custom Service</a>
+    </div>
+</section>
+
+<section id="portfolio">
+    <h2>Our Recent <span class="color-purple">Products</span></h2>
+    <div class="portfolio-grid">
+        
+        <div class="portfolio-item">
+            <i class="fas fa-globe-americas fa-2x"></i>
+            <h3>Modern Business Website</h3>
+            <p>Full-stack responsive design and development for a local startup.</p>
+            <a href="#" class="color-green">View Project</a>
+        </div>
+
+        <div class="portfolio-item">
+            <i class="fas fa-magic fa-2x"></i>
+            <h3>Brand Identity & Logo</h3>
+            <p>Sleek, futuristic logo and comprehensive brand style guide.</p>
+            <a href="#" class="color-green">View Design</a>
+        </div>
+
+        <div class="portfolio-item">
+            <i class="fas fa-gamepad fa-2x"></i>
+            <h3>Early Scratch Animation/Game</h3>
+            <p>My first successful project demonstrating early coding logic.</p>
+            <a href="#" class="color-green">See on Scratch</a>
+        </div>
+        
+        <div class="portfolio-item">
+            <i class="fas fa-layer-group fa-2x"></i>
+            <h3>Digital Poster Collection</h3>
+            <p>A collection of high-impact promotional posters and cards.</p>
+            <a href="#" class="color-green">View Gallery</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="music">
+    <h2>Passions & <span class="color-purple">Interests</span></h2>
+    
+    <div class="music-content">
+        <div class="piano-pic">
+             <i class="fas fa-compact-disc"></i>
+        </div> <div class="music-text">
+            <h3>The Creative Flow: Piano & Invention</h3>
+            <p>
+                I am a younpianist who finds harmony and structure both in a coding language and on the keys. Music is my creative outlet, helping me maintain the balance and discipline necessary for complex software tasks.
+            </p>
+            <p>
+                I also love inventing new concepts and enjoy the competitive fun of playing games like Checkers,Chess, FC Mobile, eFootball, and Roblox. My greatest sports passion is supporting Man City FC!
+            </p>
+            <a href="#" class="cta-button music-cta">See My Man City Picks</a>
+        </div>
+    </div>
+    
+    <div class="interests-grid">
+        <div class="interest-item"><i class="fas fa-futbol"></i> Man City Fan</div>
+        <div class="interest-item"><i class="fas fa-chess-pawn"></i> Checkers</div>
+        <div class="interest-item"><i class="fas fa-mobile-screen-button"></i> FC Mobile/eFootball</div>
+        <div class="interest-item"><i class="fas fa-robot"></i> Inventing</div>
+        <div class="interest-item"><i class="fas fa-keyboard"></i> Roblox & Games</div>
+    </div>
+
+</section>
+
+<section id="testimonials">
+    <h2>What People Say About <span class="color-green">JFY</span></h2>
+    <div class="testimonial-grid">
+        
+        <div class="testimonial-card">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p>"Jerry's dedication to quality is far beyond his years. The logo design was professional and delivered ahead of schedule. Highly recommended!"</p>
+            <span>— Vanvicker Otieno</span>
+        </div>
+        
+        <div class="testimonial-card">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p>"I was incredibly impressed by the logic in his Scratch game. A truly inspiring young coder with a bright future and clear passion for technology!"</p>
+            <span>— Alex Furgason</span>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="join">
+    <h2><span class="color-green">Join</span> JFY Technologies</h2>
+    <p style="text-align: center; max-width: 600px; margin: 0 auto 50px;">
+        We are a dedicated team seeking passionate individuals to collaborate. Reach out below to start your journey with us!
+    </p>
+
+    <div class="join-options">
+        <div class="option-card">
+            <i class="fas fa-microchip"></i>
+            <h3>Learner</h3>
+            <p>Start your learning journey. Acquire design and coding skills mentored by the JFY team.</p>
+        </div>
+        <div class="option-card">
+            <i class="fas fa-handshake"></i>
+            <h3>Partner</h3>
+            <p>Elevate your business. Collaborate with us on large projects and share resources and vision.</p>
+        </div>
+        <div class="option-card">
+            <i class="fas fa-users"></i>
+            <h3>Staff</h3>
+            <p>Become a core member. Dedicate your skills as a designer, developer, or project manager.</p>
+        </div>
+        <div class="option-card">
+            <i class="fas fa-gamepad"></i>
+            <h3>Fun / Hobbyist</h3>
+            <p>Join the community to discuss tech, music, Man City FC, and general creative fun!</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Get In <span class="color-purple">Touch</span></h2>
+    
+    <div class="contact-container">
+        <form action="#" method="POST" id="contactForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="type">Inquiry Type:</label>
+                <select id="type" name="type" required>
+                    <option value="">-- Select Inquiry Type --</option>
+                    <option value="General">General Question</option>
+                    <option value="Join-Learner">Join as Learner</option>
+                    <option value="Join-Partner">Join as Partner</option>
+                    <option value="Join-Staff">Join as Staff</option>
+                    <option value="Join-Fun">Join for Fun/Hobbyist</option>
+                    <option value="Project-Quote">Request Project Quote</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="cta-button submit-button">Send Message to JFY</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="contact-footer-info">
+        <p style="font-size: 1.1em; margin-bottom: 5px;">
+            <span class="color-primary-green"><i class="fas fa-envelope"></i> Business Inquiries:</span> 
+            <a href="mailto:jfymultipurpose@gmail.com" class="color-secondary-purple">jfymultipurpose@gmail.com</a>
+        </p>
+        <p style="font-size: 1.1em;">
+            <span class="color-primary-green"><i class="fab fa-whatsapp"></i> WhatsApp/Call:</span> 
+            <a href="tel:+254795691073" class="color-secondary-purple">+254 795 691 073</a>
+        </p>
+    </div>
+
+    <div class="social-links">
+        <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+    <p class="color-text-dim">
+        &copy; 2024 JFY MULTIPURPOSE TECHNOLOGIES. <span class="color-primary-green">Designed with Passion.</span>
+    </p>
+    <p>
+        CEO: Jerry Frankline Yudaha | <span class="color-secondary-purple">inspiring the future of software engineering.</span>
+    </p>
+</footer>
+
+<script>
+    // --- Minimal JavaScript for Interactivity ---
+    
+    // Simple form submission handler (for demonstration - you will need backend code to actually send emails)
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Stop default form submission
+        
+        // Get form data
+        const name = document.getElementById('name').value;
+        const type = document.getElementById('type').value;
+
+        // Simple user feedback
+        alert(`Thank you, ${name}! Your inquiry about '${type}' has been received. We will be in touch soon! (Note: This is a simulation. To receive actual emails, connect this form to a backend service like Formspree, Netlify Forms, or a custom serverless function).`);
+
+        // Clear the form fields after simulated submission
+        this.reset();
+    });
+    
+</script>
+
+</body>
+</html>
