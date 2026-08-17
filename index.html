@@ -72,6 +72,19 @@
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
 
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .logo-img {
+        height: 45px;
+        width: auto;
+        border-radius: 6px;
+        object-fit: contain;
+    }
+
     .logo {
         font-size: 1.5em;
         font-weight: bold;
@@ -95,7 +108,7 @@
 
     /* --- 🚀 HERO SECTION --- */
     #home {
-        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://picsum.photos/1920/1080?random=1') no-repeat center center/cover; /* Placeholder Image */
+        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://picsum.photos/1920/1080?random=1') no-repeat center center/cover;
         text-align: center;
         min-height: 100vh;
     }
@@ -127,7 +140,7 @@
         cursor: pointer;
     }
 
-    lol.cta-button:hover {
+    .cta-button:hover {
         background-color: var(--color-secondary-purple);
         color: var(--color-text-light);
         transform: translateY(-3px);
@@ -148,19 +161,13 @@
     }
 
     .profile-pic {
-        /* Placeholder styling */
-        min-width: 200px;
-        height: 200px;
+        width: 220px;
+        height: 220px;
         border-radius: 50%;
         object-fit: cover;
         border: 5px solid var(--color-primary-green);
         box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
-        background-color: #333;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 3em;
-        color: var(--color-secondary-purple);
+        flex-shrink: 0;
     }
 
     .bio-text h3 {
@@ -206,7 +213,6 @@
         color: var(--color-text-dim);
     }
 
-
     /* --- 🛠️ SERVICES & PRODUCTS --- */
     #services {
         background-color: #1a1a1a;
@@ -238,7 +244,6 @@
     .service-card h3 {
         color: var(--color-primary-green);
     }
-
 
     /* --- 🎨 PORTFOLIO --- */
     .portfolio-grid {
@@ -279,7 +284,6 @@
     }
     
     .piano-pic {
-        /* Placeholder styling */
         width: 40%;
         max-width: 400px;
         min-width: 300px;
@@ -321,8 +325,7 @@
         margin-bottom: 5px;
     }
     
-    /* --- 💬 TESTIMONIALS & JOIN US & CONTACT (Additional Styles) --- */
-    
+    /* --- 💬 TESTIMONIALS & JOIN US & CONTACT --- */
     #testimonials {
         background-color: #1a1a1a;
         min-height: auto;
@@ -492,7 +495,6 @@
         color: var(--color-primary-green);
     }
 
-
     /* --- MEDIA QUERIES (Responsiveness) --- */
     @media (max-width: 768px) {
         #home h1 { font-size: 3em; }
@@ -500,7 +502,7 @@
         nav { margin-top: 15px; }
         nav a { margin: 0 10px; }
         .about-content { flex-direction: column; text-align: center; }
-        .profile-pic { margin-bottom: 20px; }
+        .profile-pic { margin: 0 auto 20px auto; }
         .join-options { flex-direction: column; align-items: center; }
         .option-card { width: 90%; max-width: 300px; }
         .music-content { flex-direction: column; }
@@ -512,7 +514,11 @@
 <body>
 
 <header>
-    <div class="logo">JFY <span class="color-purple">TECHNOLOGIES</span></div>
+    <div class="logo-container">
+        <!-- JFY Logo from Google Drive -->
+        <img src="https://lh3.googleusercontent.com/d/13Bu_RQnb5aFiWyWkqgw3_NSTRJg3EdkZ" alt="JFY Logo" class="logo-img">
+        <div class="logo">JFY <span class="color-purple">TECHNOLOGIES</span></div>
+    </div>
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About Me</a>
@@ -526,7 +532,7 @@
 
 <section id="home">
     <h1>
-        <span class="color-green">DESIGN</span> YOUR DIGITAL UNIVERSE
+        <span class="color-green">DESIGN</span> YOUR DIGITAL UNIVERSE TODAY
     </h1>
     <p>
         JFY MULTIPURPOSE TECHNOLOGIES: Crafting next-level solutions with code and creativity.
@@ -538,9 +544,10 @@
     <h2>About <span class="color-green">The CEO</span></h2>
     
     <div class="about-content">
-        <div class="profile-pic">
-             <i class="fas fa-user-circle"></i>
-        </div> <div class="bio-text">
+        <!-- Jerry's Profile Picture from Google Drive -->
+        <img src="https://lh3.googleusercontent.com/d/13-yuLjCgANjV4oOJebUok9uv47oP2DpY" alt="Jerry Frankline Yudaha - CEO JFY Technologies" class="profile-pic">
+        
+        <div class="bio-text">
             <h3>Jerry Frankline Yudaha | 14 Years Young</h3>
             <p>
                 Hello! I'm Jerry Frankline Yudaha (JFY), a 14-year-old developer, designer, and entrepreneur dedicated to building the future. I am the CEO of JFY MULTIPURPOSE TECHNOLOGIES, driven by the logic of code and the creativity of design. I believe that integrating technical rigor with artistic passion is the key to multipurpose solutions.
@@ -657,13 +664,14 @@
     <div class="music-content">
         <div class="piano-pic">
              <i class="fas fa-compact-disc"></i>
-        </div> <div class="music-text">
+        </div> 
+        <div class="music-text">
             <h3>The Creative Flow: Piano & Invention</h3>
             <p>
-                I am a younpianist who finds harmony and structure both in a coding language and on the keys. Music is my creative outlet, helping me maintain the balance and discipline necessary for complex software tasks.
+                I am a young pianist who finds harmony and structure both in a coding language and on the keys. Music is my creative outlet, helping me maintain the balance and discipline necessary for complex software tasks.
             </p>
             <p>
-                I also love inventing new concepts and enjoy the competitive fun of playing games like Checkers,Chess, FC Mobile, eFootball, and Roblox. My greatest sports passion is supporting Man City FC!
+                I also love inventing new concepts and enjoy the competitive fun of playing games like Checkers, Chess, FC Mobile, eFootball, and Roblox. My greatest sports passion is supporting Man City FC!
             </p>
             <a href="#" class="cta-button music-cta">See My Man City Picks</a>
         </div>
@@ -697,7 +705,6 @@
 
     </div>
 </section>
-
 
 <section id="join">
     <h2><span class="color-green">Join</span> JFY Technologies</h2>
@@ -782,7 +789,7 @@
         <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
     </div>
     <p class="color-text-dim">
-        &copy; 2024 JFY MULTIPURPOSE TECHNOLOGIES. <span class="color-primary-green">Designed with Passion.</span>
+        &copy; 2026 JFY MULTIPURPOSE TECHNOLOGIES. <span class="color-primary-green">Designed with Passion.</span>
     </p>
     <p>
         CEO: Jerry Frankline Yudaha | <span class="color-secondary-purple">inspiring the future of software engineering.</span>
@@ -790,23 +797,16 @@
 </footer>
 
 <script>
-    // --- Minimal JavaScript for Interactivity ---
-    
-    // Simple form submission handler (for demonstration - you will need backend code to actually send emails)
     document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Stop default form submission
+        event.preventDefault(); 
         
-        // Get form data
         const name = document.getElementById('name').value;
         const type = document.getElementById('type').value;
 
-        // Simple user feedback
-        alert(`Thank you, ${name}! Your inquiry about '${type}' has been received. We will be in touch soon! (Note: This is a simulation. To receive actual emails, connect this form to a backend service like Formspree, Netlify Forms, or a custom serverless function).`);
+        alert(`Thank you, ${name}! Your inquiry about '${type}' has been received. We will be in touch soon!`);
 
-        // Clear the form fields after simulated submission
         this.reset();
     });
-    
 </script>
 
 </body>
