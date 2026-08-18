@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JFY MULTIPURPOSE TECHNOLOGIES - Jerry Frankline Yudaha</title>
+    <title>JFY MULTIPURPOSE TECHNOLOGIES - Jerry Frankline Yudaha ("Otiepe")</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
@@ -12,8 +11,8 @@
     :root {
         --color-dark: #121212;
         --color-background: #0A0A0A;
-        --color-primary-green: #39FF14; /* Electric Green - Action/Highlight */
-        --color-secondary-purple: #E065E0; /* Cyber Purple - Accent/Links */
+        --color-primary-green: #39FF14; /* Electric Green */
+        --color-secondary-purple: #E065E0; /* Cyber Purple */
         --color-text-light: #EDEDED;
         --color-text-dim: #999999;
         --font-stack: 'Arial', sans-serif;
@@ -33,7 +32,6 @@
         scroll-behavior: smooth;
     }
 
-    /* Utility Class for Colorful Text */
     .color-green { color: var(--color-primary-green); }
     .color-purple { color: var(--color-secondary-purple); }
 
@@ -95,7 +93,7 @@
     nav a {
         color: var(--color-text-light);
         text-decoration: none;
-        margin-left: 25px;
+        margin-left: 20px;
         font-weight: 500;
         transition: color 0.3s, border-bottom 0.3s;
         padding-bottom: 5px;
@@ -147,6 +145,41 @@
         box-shadow: 0 5px 15px rgba(224, 101, 224, 0.4);
     }
 
+    /* --- 📊 IMPACT METRICS / COUNTER STRIP --- */
+    #stats {
+        background-color: #161616;
+        padding: 40px 5%;
+        border-top: 1px solid #222;
+        border-bottom: 1px solid #222;
+        min-height: auto;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        text-align: center;
+    }
+
+    .stat-card {
+        padding: 20px;
+    }
+
+    .stat-number {
+        font-size: 2.8em;
+        font-weight: bold;
+        color: var(--color-primary-green);
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .stat-label {
+        color: var(--color-text-dim);
+        font-size: 0.95em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
     /* --- 👨‍💻 ABOUT ME --- */
     #about {
         background-color: var(--color-dark);
@@ -175,6 +208,10 @@
         font-size: 1.8em;
         margin-top: 0;
     }
+
+    .bio-text p {
+        margin-bottom: 15px;
+    }
     
     .journey-box {
         margin-top: 40px;
@@ -183,8 +220,41 @@
         border-left: 5px solid var(--color-secondary-purple);
         box-shadow: 0 0 15px rgba(224, 101, 224, 0.1);
     }
+
+    .journey-box p {
+        margin-bottom: 12px;
+    }
+
+    /* --- 📈 TECHNICAL SKILL PROGRESS BARS --- */
+    .skills-section {
+        margin-top: 50px;
+    }
+
+    .skill-bar-container {
+        margin-bottom: 20px;
+    }
+
+    .skill-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    .bar-bg {
+        width: 100%;
+        height: 12px;
+        background-color: #222;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .bar-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--color-primary-green), var(--color-secondary-purple));
+        border-radius: 6px;
+    }
     
-    /* Tech Stack Styling */
     .tech-stack {
         text-align: center;
         margin-top: 60px;
@@ -211,6 +281,22 @@
         align-items: center;
         font-size: 0.8em;
         color: var(--color-text-dim);
+    }
+
+    /* --- 🎬 BRANCH BANNER (JFY PRODUCTION) --- */
+    .branch-banner {
+        background: linear-gradient(135deg, rgba(57,255,20,0.1), rgba(224,101,224,0.1));
+        border: 2px dashed var(--color-primary-green);
+        border-radius: 10px;
+        padding: 30px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .branch-banner h3 {
+        color: var(--color-primary-green);
+        font-size: 1.8em;
+        margin-bottom: 10px;
     }
 
     /* --- 🛠️ SERVICES & PRODUCTS --- */
@@ -246,29 +332,203 @@
     }
 
     /* --- 🎨 PORTFOLIO --- */
+    #portfolio {
+        background-color: var(--color-dark);
+        min-height: auto;
+    }
+
+    .portfolio-filters {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+    }
+
+    .filter-btn {
+        background-color: #1a1a1a;
+        color: var(--color-text-light);
+        border: 1px solid var(--color-secondary-purple);
+        padding: 8px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+        background-color: var(--color-primary-green);
+        color: var(--color-dark);
+        border-color: var(--color-primary-green);
+        box-shadow: 0 0 10px rgba(57, 255, 20, 0.4);
+    }
+
     .portfolio-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 30px;
         width: 100%;
     }
 
     .portfolio-item {
-        background-color: var(--color-dark);
-        padding: 20px;
-        border-radius: 8px;
+        background-color: #1a1a1a;
+        border-radius: 10px;
         border: 1px solid var(--color-secondary-purple);
-        box-shadow: 0 0 15px rgba(57, 255, 20, 0.1);
+        box-shadow: 0 0 15px rgba(57, 255, 20, 0.05);
         transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .portfolio-item:hover {
+        transform: translateY(-8px);
+        border-color: var(--color-primary-green);
+        box-shadow: 0 8px 25px rgba(57, 255, 20, 0.25);
+    }
+
+    .portfolio-img-wrapper {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+        background-color: #0d0d0d;
+        cursor: pointer;
+    }
+
+    .portfolio-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .portfolio-item:hover .portfolio-img {
+        transform: scale(1.08);
+    }
+
+    .portfolio-info {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
         text-align: center;
     }
-    .portfolio-item:hover {
-        transform: translateY(-5px);
-        border-color: var(--color-primary-green);
-        box-shadow: 0 5px 20px rgba(57, 255, 20, 0.3);
+
+    .portfolio-info p {
+        color: var(--color-text-dim);
+        font-size: 0.95em;
+        margin-bottom: 20px;
+        flex-grow: 1;
     }
-    .portfolio-item h3 { color: var(--color-primary-green); }
-    .portfolio-item p { color: var(--color-text-dim); }
+
+    .portfolio-link {
+        color: var(--color-secondary-purple);
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: color 0.3s;
+        cursor: pointer;
+    }
+
+    .portfolio-link:hover {
+        color: var(--color-primary-green);
+    }
+
+    /* Modal Overlay for Lightbox Preview */
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 2000;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .modal-content {
+        max-width: 90%;
+        max-height: 85%;
+        border-radius: 8px;
+        border: 2px solid var(--color-primary-green);
+        box-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
+    }
+
+    .modal-close {
+        position: absolute;
+        top: 25px;
+        right: 35px;
+        color: var(--color-text-light);
+        font-size: 2.5em;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .modal-close:hover {
+        color: var(--color-primary-green);
+    }
+
+    /* --- ❓ FAQ SECTION (ACCORDION) --- */
+    #faq {
+        background-color: #1a1a1a;
+        min-height: auto;
+    }
+
+    .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .faq-item {
+        background-color: var(--color-dark);
+        border: 1px solid #333;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+
+    .faq-question {
+        width: 100%;
+        background: none;
+        border: none;
+        outline: none;
+        padding: 20px;
+        text-align: left;
+        color: var(--color-text-light);
+        font-size: 1.1em;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .faq-question:hover {
+        background-color: #1c1c1c;
+        color: var(--color-primary-green);
+    }
+
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        background-color: #161616;
+        color: var(--color-text-dim);
+    }
+
+    .faq-answer p {
+        padding: 0 20px 20px 20px;
+        line-height: 1.6;
+    }
 
     /* --- 🎹 MUSIC & INTERESTS --- */
     #music {
@@ -336,7 +596,7 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
         width: 100%;
-        max-width: 1000px;
+        max-width: 1200px;
         margin: 0 auto;
     }
     
@@ -369,6 +629,7 @@
 
     #join {
         min-height: auto;
+        background-color: var(--color-dark);
     }
 
     .join-options {
@@ -407,16 +668,32 @@
 
     /* --- CONTACT FORM STYLES --- */
     #contact {
-        background-color: var(--color-dark);
+        background-color: #1a1a1a;
     }
     
     .contact-container {
         max-width: 600px;
         margin: 0 auto;
         padding: 30px;
-        background-color: #1a1a1a;
+        background-color: var(--color-dark);
         border-radius: 10px;
         box-shadow: 0 0 25px rgba(57, 255, 20, 0.1);
+    }
+
+    .contact-options-btn {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .whatsapp-btn {
+        background-color: #25D366;
+        color: #fff;
+    }
+
+    .whatsapp-btn:hover {
+        background-color: #1EBE57;
+        color: #fff;
     }
     
     .form-group {
@@ -437,7 +714,7 @@
         padding: 12px;
         border: 1px solid #333;
         border-radius: 5px;
-        background-color: var(--color-dark);
+        background-color: #1a1a1a;
         color: var(--color-text-light);
         font-size: 1em;
         transition: border-color 0.3s;
@@ -453,11 +730,6 @@
     .form-group textarea {
         resize: vertical;
         min-height: 150px;
-    }
-    
-    .submit-button {
-        width: 100%;
-        margin-top: 10px;
     }
 
     /* --- FOOTER --- */
@@ -481,6 +753,10 @@
         margin-bottom: 20px;
     }
 
+    .contact-footer-info p {
+        margin-bottom: 8px;
+    }
+
     .social-links {
         margin-bottom: 20px;
     }
@@ -500,13 +776,14 @@
         #home h1 { font-size: 3em; }
         header { flex-direction: column; }
         nav { margin-top: 15px; }
-        nav a { margin: 0 10px; }
+        nav a { margin: 5px 8px; }
         .about-content { flex-direction: column; text-align: center; }
         .profile-pic { margin: 0 auto 20px auto; }
         .join-options { flex-direction: column; align-items: center; }
         .option-card { width: 90%; max-width: 300px; }
         .music-content { flex-direction: column; }
         .piano-pic { width: 80%; min-width: unset; margin-bottom: 20px; }
+        .contact-options-btn { flex-direction: column; }
     }
 </style>
 
@@ -524,6 +801,7 @@
         <a href="#about">About Me</a>
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
+        <a href="#faq">FAQ</a>
         <a href="#music">Interests</a>
         <a href="#join">Join Us</a>
         <a href="#contact">Contact</a>
@@ -535,9 +813,31 @@
         <span class="color-green">DESIGN</span> YOUR DIGITAL UNIVERSE TODAY
     </h1>
     <p>
-        JFY MULTIPURPOSE TECHNOLOGIES: Crafting next-level solutions with code and creativity.
+        JFY MULTIPURPOSE TECHNOLOGIES: Crafting next-level solutions with code, creativity, and media excellence.
     </p>
     <a href="#services" class="cta-button">Explore Our Services</a>
+</section>
+
+<!-- IMPACT & PERFORMANCE STATS STRIP -->
+<section id="stats">
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Graphics & Posters Designed</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Broadcast Tickers & Videos</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Client Commitment</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Direct Communication</span>
+        </div>
+    </div>
 </section>
 
 <section id="about">
@@ -548,28 +848,94 @@
         <img src="https://lh3.googleusercontent.com/d/13-yuLjCgANjV4oOJebUok9uv47oP2DpY" alt="Jerry Frankline Yudaha - CEO JFY Technologies" class="profile-pic">
         
         <div class="bio-text">
-            <h3>Jerry Frankline Yudaha | 14 Years Young</h3>
+            <h3>Jerry Frankline Yudaha ("Otiepe") | CEO & Founder</h3>
             <p>
-                Hello! I'm Jerry Frankline Yudaha (JFY), a 14-year-old developer, designer, and entrepreneur dedicated to building the future. I am the CEO of JFY MULTIPURPOSE TECHNOLOGIES, driven by the logic of code and the creativity of design. I believe that integrating technical rigor with artistic passion is the key to multipurpose solutions.
+                Greetings! I am Jerry Frankline Yudaha, affectionately known by my moniker "Otiepe". As a passionate full-stack developer, graphic designer, video editor, and tech entrepreneur, I am dedicated to bridging the gap between imaginative concepts and functional technology. I serve as the Chief Executive Officer of JFY MULTIPURPOSE TECHNOLOGIES—a dynamic technological venture driven by logical engineering and visual artistry.
             </p>
+            <p>
+                My philosophy centers around multi-purpose innovation. Technology should not be rigid; it must adapt, solve real-world problems, and deliver impactful visual storytelling. Over the years, I have spearheaded creative campaigns, developed digital applications, designed custom identity credentials, and provided technical consultation to individuals, educational bodies, and political entities.
+            </p>
+            <p>
+                My foundational experiences include serving as the Technical Manager, Graphic Designer, and Web Editor for the <strong>Achungo Journalism Club (AJCTV)</strong>. Through this role, I designed high-profile broadcast overlays, digital staff ID badges, news tickers, and official publication art that significantly elevated the brand identity of the club and institution.
+            </p>
+
             <div class="journey-box">
-                <h3 class="color-purple">My STEM Journey & Coding Foundations</h3>
+                <h3 class="color-purple">My STEM Journey & Technological Foundations</h3>
                 <p>
-                    My journey began with the joy of creation on Scratch. I have since dedicated myself to learning: HTML, CSS, JS, and PYTHON. I possess a deep interest in Mathematics and Integrated Science, which fuels my logical approach to software engineering.
+                    My passion for technology began with algorithmic block-based programming on Scratch, where I learned to structure logic and visualize code execution. Seeking deeper technical mastery, I completed structured frontend web development training at <strong>Codingal</strong>, while expanding my knowledge through self-guided study across platforms like <strong>W3Schools</strong>, <strong>freeCodeCamp</strong>, and <strong>MDN Web Docs</strong>.
+                </p>
+                <p>
+                    Today, my skill set encompasses HTML5, CSS3, JavaScript (ES6+), Python, and modern web application development. Furthermore, my strong background in Mathematics and Integrated Science equips me with analytical problem-solving skills, allowing me to approach code architecture, system debugging, and layout design with precision and creativity.
                 </p>
             </div>
         </div>
     </div>
+
+    <!-- TECHNICAL PROFICIENCY PROGRESS BARS -->
+    <div class="skills-section">
+        <h3 class="color-green" style="text-align: center; margin-bottom: 30px;">Technical Proficiency</h3>
+        
+        <div class="skill-bar-container">
+            <div class="skill-info">
+                <span>Graphic Design & Poster Creation</span>
+                <span class="color-green">95%</span>
+            </div>
+            <div class="bar-bg">
+                <div class="bar-fill" style="width: 95%;"></div>
+            </div>
+        </div>
+
+        <div class="skill-bar-container">
+            <div class="skill-info">
+                <span>Video Editing & Broadcast Overlays</span>
+                <span class="color-purple">90%</span>
+            </div>
+            <div class="bar-bg">
+                <div class="bar-fill" style="width: 90%;"></div>
+            </div>
+        </div>
+
+        <div class="skill-bar-container">
+            <div class="skill-info">
+                <span>Frontend Web Development (HTML/CSS/JS)</span>
+                <span class="color-green">88%</span>
+            </div>
+            <div class="bar-bg">
+                <div class="bar-fill" style="width: 88%;"></div>
+            </div>
+        </div>
+
+        <div class="skill-bar-container">
+            <div class="skill-info">
+                <span>Logic Scripting & Problem Solving (Python/Math)</span>
+                <span class="color-purple">82%</span>
+            </div>
+            <div class="bar-bg">
+                <div class="bar-fill" style="width: 82%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEW BRANCH ANNOUNCEMENT -->
+    <div class="branch-banner">
+        <h3><i class="fas fa-film"></i> Introducing JFY PRODUCTION</h3>
+        <p>
+            We are proud to announce the official rollout of <strong>JFY Production</strong>, a dedicated media branch under JFY MULTIPURPOSE TECHNOLOGIES! 
+            JFY Production specializes in high-end, professional video editing, custom photo designing, political and corporate campaign posters, promotional flyers, live broadcast graphics, and comprehensive digital media production.
+        </p>
+    </div>
     
     <div class="tech-stack">
-        <h3 class="color-green">My Core Tech Stack</h3>
+        <h3 class="color-green">My Core Tech Stack & Tools</h3>
         <div class="tech-stack-icons">
-            <div class="tech-stack-label"><i class="fab fa-html5"></i> HTML</div>
-            <div class="tech-stack-label"><i class="fab fa-css3-alt"></i> CSS</div>
+            <div class="tech-stack-label"><i class="fab fa-html5"></i> HTML5</div>
+            <div class="tech-stack-label"><i class="fab fa-css3-alt"></i> CSS3</div>
             <div class="tech-stack-label"><i class="fab fa-js-square"></i> JavaScript</div>
             <div class="tech-stack-label"><i class="fab fa-python"></i> Python</div>
-            <div class="tech-stack-label"><i class="fas fa-square-root-variable"></i> Math</div>
-            <div class="tech-stack-label"><i class="fas fa-atom"></i> Science</div>
+            <div class="tech-stack-label"><i class="fas fa-video"></i> Video Editing</div>
+            <div class="tech-stack-label"><i class="fas fa-paint-brush"></i> Graphic Design</div>
+            <div class="tech-stack-label"><i class="fas fa-square-root-variable"></i> Mathematics</div>
+            <div class="tech-stack-label"><i class="fas fa-atom"></i> Integrated Science</div>
         </div>
     </div>
 </section>
@@ -577,84 +943,184 @@
 <section id="services">
     <h2>Our Multi-Purpose <span class="color-purple">Services</span></h2>
     <p style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
-        We design a variety of high-quality digital products for clients, combining technical skill with modern aesthetics.
+        From custom code development to professional studio-grade media production through <strong>JFY Production</strong>, we deliver robust solutions tailored to your needs.
     </p>
     <div class="services-grid">
         
         <div class="service-card">
             <i class="fas fa-desktop"></i>
             <h3>Web Design & Apps</h3>
-            <p>Developing fast, responsive, and modern websites and app interfaces.</p>
+            <p>Developing fast, responsive, modern websites, landing pages, and web application templates.</p>
         </div>
         
         <div class="service-card">
             <i class="fas fa-id-badge"></i>
             <h3>Logo Design & Branding</h3>
-            <p>Creating unique, memorable brand identities and style guides.</p>
+            <p>Creating unique vector logos, brand identities, badges, and professional style guides.</p>
         </div>
         
         <div class="service-card">
             <i class="fas fa-bullhorn"></i>
-            <h3>Advertisement</h3>
-            <p>Creating digital ad content and strategies to boost visibility.</p>
+            <h3>Advertisement & Marketing</h3>
+            <p>Designing digital advertising campaigns, social media graphics, and strategic promo materials.</p>
         </div>
         
         <div class="service-card">
             <i class="fas fa-video"></i>
-            <h3>Video Editing</h3>
-            <p>Professional video editing services for social media and content creation.</p>
+            <h3>JFY Video Production</h3>
+            <p>Professional video editing, motion news tickers, event coverage, and multi-layer broadcast overlays.</p>
         </div>
         
         <div class="service-card">
             <i class="fas fa-print"></i>
-            <h3>Posters & Cards</h3>
-            <p>Easy-to-use services for professional digital posters and cards.</p>
+            <h3>Posters & ID Cards</h3>
+            <p>High-resolution campaign posters, event flyers, and customizable digital student/staff ID cards.</p>
         </div>
         
         <div class="service-card">
             <i class="fas fa-undo-alt"></i>
-            <h3>System Recovery</h3>
-            <p>Assistance with basic system troubleshooting and data recovery needs.</p>
+            <h3>System Recovery & Support</h3>
+            <p>Basic system diagnostics, software configuration, troubleshooting, and digital asset maintenance.</p>
         </div>
 
     </div>
     <div style="text-align: center; margin-top: 40px;">
-        <a href="#contact" class="cta-button">Request a Custom Service</a>
+        <a href="#contact" class="cta-button">Contact for Custom Pricing & Quotes</a>
     </div>
 </section>
 
 <section id="portfolio">
     <h2>Our Recent <span class="color-purple">Products</span></h2>
+    
+    <!-- Category Filter Controls -->
+    <div class="portfolio-filters">
+        <button class="filter-btn active" onclick="filterPortfolio('all')">All Work</button>
+        <button class="filter-btn" onclick="filterPortfolio('branding')">Branding & Logos</button>
+        <button class="filter-btn" onclick="filterPortfolio('design')">Graphic Design</button>
+        <button class="filter-btn" onclick="filterPortfolio('media')">Media & Web</button>
+    </div>
+
     <div class="portfolio-grid">
         
-        <div class="portfolio-item">
-            <i class="fas fa-globe-americas fa-2x"></i>
-            <h3>Modern Business Website</h3>
-            <p>Full-stack responsive design and development for a local startup.</p>
-            <a href="#" class="color-green">View Project</a>
+        <!-- Project 1: JFY Media Tech Poster -->
+        <div class="portfolio-item" data-category="branding">
+            <div class="portfolio-img-wrapper" onclick="openModal('https://lh3.googleusercontent.com/d/1T4rtLvFcfKjs2b_GmmLbBM01MWsjjPF-')">
+                <img src="https://lh3.googleusercontent.com/d/1T4rtLvFcfKjs2b_GmmLbBM01MWsjjPF-" alt="JFY Media Tech Portfolio Item" class="portfolio-img">
+            </div>
+            <div class="portfolio-info">
+                <p>Official service catalog presentation highlighting web development, graphic design, hosting, and IT solutions.</p>
+                <span class="portfolio-link" onclick="openModal('https://lh3.googleusercontent.com/d/1T4rtLvFcfKjs2b_GmmLbBM01MWsjjPF-')">View Preview <i class="fas fa-expand"></i></span>
+            </div>
         </div>
 
-        <div class="portfolio-item">
-            <i class="fas fa-magic fa-2x"></i>
-            <h3>Brand Identity & Logo</h3>
-            <p>Sleek, futuristic logo and comprehensive brand style guide.</p>
-            <a href="#" class="color-green">View Design</a>
+        <!-- Project 2: Achungo Scratch Coding Logo -->
+        <div class="portfolio-item" data-category="branding">
+            <div class="portfolio-img-wrapper" onclick="openModal('https://lh3.googleusercontent.com/d/1pyTDb657LHPEIAufrHbxqIKzr3R1dmZj')">
+                <img src="https://lh3.googleusercontent.com/d/1pyTDb657LHPEIAufrHbxqIKzr3R1dmZj" alt="Coding Emblem Portfolio Item" class="portfolio-img">
+            </div>
+            <div class="portfolio-info">
+                <p>Custom vector emblem designed for the school coding club themed "Learning From Mistakes".</p>
+                <span class="portfolio-link" onclick="openModal('https://lh3.googleusercontent.com/d/1pyTDb657LHPEIAufrHbxqIKzr3R1dmZj')">View Preview <i class="fas fa-expand"></i></span>
+            </div>
         </div>
 
-        <div class="portfolio-item">
-            <i class="fas fa-gamepad fa-2x"></i>
-            <h3>Early Scratch Animation/Game</h3>
-            <p>My first successful project demonstrating early coding logic.</p>
-            <a href="#" class="color-green">See on Scratch</a>
-        </div>
-        
-        <div class="portfolio-item">
-            <i class="fas fa-layer-group fa-2x"></i>
-            <h3>Digital Poster Collection</h3>
-            <p>A collection of high-impact promotional posters and cards.</p>
-            <a href="#" class="color-green">View Gallery</a>
+        <!-- Project 3: AJCTV News Ticker Broadcast Overlay -->
+        <div class="portfolio-item" data-category="media">
+            <div class="portfolio-img-wrapper" onclick="openModal('https://lh3.googleusercontent.com/d/1CO2noARQq1jFnP0xTF2DxV1HRN87yr1t')">
+                <img src="https://lh3.googleusercontent.com/d/1CO2noARQq1jFnP0xTF2DxV1HRN87yr1t" alt="Broadcast Graphic Portfolio Item" class="portfolio-img">
+            </div>
+            <div class="portfolio-info">
+                <p>Scrolling news ticker and television broadcast overlay graphics for live event streams and broadcasts.</p>
+                <span class="portfolio-link" onclick="openModal('https://lh3.googleusercontent.com/d/1CO2noARQq1jFnP0xTF2DxV1HRN87yr1t')">View Preview <i class="fas fa-expand"></i></span>
+            </div>
         </div>
 
+        <!-- Project 4: AJCTV Official Digital ID Badge -->
+        <div class="portfolio-item" data-category="media">
+            <div class="portfolio-img-wrapper" onclick="openModal('https://lh3.googleusercontent.com/d/1GEDvhnlPCEhZIht1Xxl7ogTm-xd-lDte')">
+                <img src="https://lh3.googleusercontent.com/d/1GEDvhnlPCEhZIht1Xxl7ogTm-xd-lDte" alt="Digital ID Badge Portfolio Item" class="portfolio-img">
+            </div>
+            <div class="portfolio-info">
+                <p>Official membership ID card layout featuring barcode/QR code verification structure for staff and web editors.</p>
+                <span class="portfolio-link" onclick="openModal('https://lh3.googleusercontent.com/d/1GEDvhnlPCEhZIht1Xxl7ogTm-xd-lDte')">View ID Badge <i class="fas fa-expand"></i></span>
+            </div>
+        </div>
+
+        <!-- Project 5: Hon. Joshua Adoyo MCA Campaign Poster -->
+        <div class="portfolio-item" data-category="design">
+            <div class="portfolio-img-wrapper" onclick="openModal('https://lh3.googleusercontent.com/d/1xGHurwr6L4m4d-lEZPB6SZ9uASRmpJC_')">
+                <img src="https://lh3.googleusercontent.com/d/1xGHurwr6L4m4d-lEZPB6SZ9uASRmpJC_" alt="Political Campaign Portfolio Item" class="portfolio-img">
+            </div>
+            <div class="portfolio-info">
+                <p>High-impact political campaign layout featuring candidate portrait alignment, custom typography, and color grading.</p>
+                <span class="portfolio-link" onclick="openModal('https://lh3.googleusercontent.com/d/1xGHurwr6L4m4d-lEZPB6SZ9uASRmpJC_')">View Preview <i class="fas fa-expand"></i></span>
+            </div>
+        </div>
+
+        <!-- Project 6: Domnic Wanga JLUSO Campaign Poster -->
+        <div class="portfolio-item" data-category="design">
+            <div class="portfolio-img-wrapper" onclick="openModal('https://lh3.googleusercontent.com/d/1HTUf0DzPilhkRywG4iAD8O_9kAuXWnok')">
+                <img src="https://lh3.googleusercontent.com/d/1HTUf0DzPilhkRywG4iAD8O_9kAuXWnok" alt="Student Council Campaign Portfolio Item" class="portfolio-img">
+            </div>
+            <div class="portfolio-info">
+                <p>Student council leadership election poster with structured manifesto formatting and vibrant graphics.</p>
+                <span class="portfolio-link" onclick="openModal('https://lh3.googleusercontent.com/d/1HTUf0DzPilhkRywG4iAD8O_9kAuXWnok')">View Preview <i class="fas fa-expand"></i></span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Image Lightbox Modal Popup -->
+<div id="imageModal" class="modal-overlay" onclick="closeModal()">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <img id="modalImg" class="modal-content" src="" alt="Full Resolution Preview">
+</div>
+
+<!-- FREQUENTLY ASKED QUESTIONS SECTION -->
+<section id="faq">
+    <h2>Frequently Asked <span class="color-green">Questions</span></h2>
+    
+    <div class="faq-container">
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>How long does a video editing project take?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p>Turnaround time depends on the project scope! Short social media clips or news ticker overlays typically take 24–48 hours. Larger event video productions, promo edits, or complex broadcasts generally take 3–5 business days.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>What formats do you deliver final graphic designs in?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p>We deliver high-resolution files in PNG, JPEG, and print-ready PDF formats. For logos and vector graphics, editable source files (PSD, AI, or SVG) can also be provided upon request.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>How are project prices determined?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p>Because every project has unique requirements, we do not use fixed pricing. Please reach out via our contact form, email, or WhatsApp with your project details, and we will send you a customized quote!</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>What services does the new JFY Production branch offer?</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+                <p>JFY Production handles professional video editing, custom photo designing, campaign and event posters, live broadcast overlays, scrolling news tickers, and complete promotional media assets.</p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -663,17 +1129,17 @@
     
     <div class="music-content">
         <div class="piano-pic">
-             <i class="fas fa-compact-disc"></i>
+            <i class="fas fa-compact-disc"></i>
         </div> 
         <div class="music-text">
             <h3>The Creative Flow: Piano & Invention</h3>
             <p>
-                I am a young pianist who finds harmony and structure both in a coding language and on the keys. Music is my creative outlet, helping me maintain the balance and discipline necessary for complex software tasks.
+                I am a passionate young pianist who finds harmony and structure both in a line of code and on the piano keyboard. I was mentored in piano by Williams Kayando, who continues to guide my musical training to this day! Music serves as my ultimate creative outlet, helping me maintain focus, rhythm, and discipline when tackling complex programming tasks.
             </p>
             <p>
-                I also love inventing new concepts and enjoy the competitive fun of playing games like Checkers, Chess, FC Mobile, eFootball, and Roblox. My greatest sports passion is supporting Man City FC!
+                Beyond music and software, I love inventing new concepts and participating in strategic gaming. I enjoy playing Checkers, Chess, FC Mobile, eFootball, and Roblox. Furthermore, my primary sports passion is enthusiastically supporting Manchester City FC!
             </p>
-            <a href="#" class="cta-button music-cta">See My Man City Picks</a>
+            <a href="#contact" class="cta-button music-cta">Get In Touch</a>
         </div>
     </div>
     
@@ -693,6 +1159,30 @@
         
         <div class="testimonial-card">
             <i class="fas fa-quote-left quote-icon"></i>
+            <p>"You are doing a great job, I like it."</p>
+            <span>— Williams Kayando</span>
+        </div>
+
+        <div class="testimonial-card">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p>"Working with Jerry on the campaign graphics was seamless. His speed, creativity, and attention to detail made a big impact."</p>
+            <span>— Hon. Joshua</span>
+        </div>
+
+        <div class="testimonial-card">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p>"Jerry's technical leadership and graphic design work for our posters were outstanding. He consistently delivers excellence."</p>
+            <span>— Domnic Wanga</span>
+        </div>
+
+        <div class="testimonial-card">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p>"JFY Media Tech brings a powerful combination of innovation and creative discipline. Jerry is an invaluable asset to any media project."</p>
+            <span>— Martin Nyawara</span>
+        </div>
+
+        <div class="testimonial-card">
+            <i class="fas fa-quote-left quote-icon"></i>
             <p>"Jerry's dedication to quality is far beyond his years. The logo design was professional and delivered ahead of schedule. Highly recommended!"</p>
             <span>— Vanvicker Otieno</span>
         </div>
@@ -701,6 +1191,24 @@
             <i class="fas fa-quote-left quote-icon"></i>
             <p>"I was incredibly impressed by the logic in his Scratch game. A truly inspiring young coder with a bright future and clear passion for technology!"</p>
             <span>— Alex Furgason</span>
+        </div>
+
+        <div class="testimonial-card">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p>"The video overlays and tickers created by JFY Production brought a whole new level of professionalism to our school media coverage!"</p>
+            <span>— AJCTV Media Team</span>
+        </div>
+
+        <div class="testimonial-card">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p>"Jerry designed our digital ID card system flawlessly. Fast turnaround time, responsive communication, and exceptional quality overall."</p>
+            <span>— Achungo ICT Dept</span>
+        </div>
+
+        <div class="testimonial-card">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p>"JFY MULTIPURPOSE TECHNOLOGIES is a one-stop studio. From logo design to web assets, Jerry handles everything with great competence."</p>
+            <span>— Client Testimonial</span>
         </div>
 
     </div>
@@ -740,73 +1248,146 @@
     <h2>Get In <span class="color-purple">Touch</span></h2>
     
     <div class="contact-container">
-        <form action="#" method="POST" id="contactForm">
+        <!-- Direct Form Action routes to Email and WhatsApp without server authentication required -->
+        <form id="contactForm">
             <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
             </div>
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <label for="email">Your Email / Phone:</label>
+                <input type="text" id="email" name="email" placeholder="Enter your email or phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="targetEmail">Send Message To:</label>
+                <select id="targetEmail" required>
+                    <option value="jfymultipurpose@gmail.com">jfymultipurpose@gmail.com (Primary)</option>
+                    <option value="compzking2@gmail.com">compzking2@gmail.com (Secondary)</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="type">Inquiry Type:</label>
                 <select id="type" name="type" required>
-                    <option value="">-- Select Inquiry Type --</option>
-                    <option value="General">General Question</option>
-                    <option value="Join-Learner">Join as Learner</option>
-                    <option value="Join-Partner">Join as Partner</option>
-                    <option value="Join-Staff">Join as Staff</option>
-                    <option value="Join-Fun">Join for Fun/Hobbyist</option>
-                    <option value="Project-Quote">Request Project Quote</option>
+                    <option value="General Inquiry">General Question</option>
+                    <option value="JFY Production Media Service">JFY Production (Video/Photos/Graphics)</option>
+                    <option value="Request Pricing Quote">Request Pricing & Quote</option>
+                    <option value="Join as Learner">Join as Learner</option>
+                    <option value="Join as Partner">Join as Partner</option>
+                    <option value="Join as Staff">Join as Staff</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
+                <textarea id="message" name="message" placeholder="Describe your project or inquiry..." required></textarea>
             </div>
-            <button type="submit" class="cta-button submit-button">Send Message to JFY</button>
+
+            <button type="button" onclick="sendViaEmail()" class="cta-button submit-button" style="margin-bottom: 12px;">
+                <i class="fas fa-paper-plane"></i> Send via Email
+            </button>
+            
+            <button type="button" onclick="sendViaWhatsApp()" class="cta-button submit-button whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Send via WhatsApp (+254 795691073)
+            </button>
         </form>
     </div>
 </section>
 
 <footer>
     <div class="contact-footer-info">
-        <p style="font-size: 1.1em; margin-bottom: 5px;">
-            <span class="color-primary-green"><i class="fas fa-envelope"></i> Business Inquiries:</span> 
-            <a href="mailto:jfymultipurpose@gmail.com" class="color-secondary-purple">jfymultipurpose@gmail.com</a>
-        </p>
-        <p style="font-size: 1.1em;">
-            <span class="color-primary-green"><i class="fab fa-whatsapp"></i> WhatsApp/Call:</span> 
-            <a href="tel:+254795691073" class="color-secondary-purple">+254 795 691 073</a>
-        </p>
+        <p><strong>Primary Email:</strong> <a href="mailto:jfymultipurpose@gmail.com">jfymultipurpose@gmail.com</a></p>
+        <p><strong>Secondary Email:</strong> <a href="mailto:compzking2@gmail.com">compzking2@gmail.com</a></p>
+        <p><strong>Phone / WhatsApp:</strong> <a href="https://wa.me/254795691073" target="_blank">+254 795 691 073</a></p>
     </div>
-
     <div class="social-links">
-        <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="#" target="_blank" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
-        <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://github.com/Jerryfrankline12" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://wa.me/254795691073" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
     </div>
-    <p class="color-text-dim">
-        &copy; 2026 JFY MULTIPURPOSE TECHNOLOGIES. <span class="color-primary-green">Designed with Passion.</span>
-    </p>
-    <p>
-        CEO: Jerry Frankline Yudaha | <span class="color-secondary-purple">inspiring the future of software engineering.</span>
-    </p>
+    <p>&copy; 2026 JFY Multipurpose Technologies & JFY Production. Built with passion by Jerry Frankline Yudaha ("Otiepe").</p>
 </footer>
 
 <script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); 
-        
+    /* --- Portfolio Filter Logic --- */
+    function filterPortfolio(category) {
+        const items = document.querySelectorAll('.portfolio-item');
+        const buttons = document.querySelectorAll('.filter-btn');
+
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        items.forEach(item => {
+            if (category === 'all' || item.getAttribute('data-category') === category) {
+                item.style.display = 'flex';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+
+    /* --- Image Lightbox Modal Logic --- */
+    function openModal(imageSrc) {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+        modal.style.display = 'flex';
+        modalImg.src = imageSrc;
+    }
+
+    function closeModal() {
+        document.getElementById('imageModal').style.display = 'none';
+    }
+
+    /* --- FAQ Accordion Logic --- */
+    function toggleFaq(button) {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector('i');
+
+        if (answer.style.maxHeight) {
+            answer.style.maxHeight = null;
+            icon.style.transform = 'rotate(0deg)';
+        } else {
+            // Close other active FAQs
+            document.querySelectorAll('.faq-answer').forEach(el => el.style.maxHeight = null);
+            document.querySelectorAll('.faq-question i').forEach(el => el.style.transform = 'rotate(0deg)');
+
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            icon.style.transform = 'rotate(180deg)';
+        }
+    }
+
+    /* --- Form Handlers for Direct Sending without Authentication --- */
+    function sendViaEmail() {
         const name = document.getElementById('name').value;
+        const contact = document.getElementById('email').value;
+        const targetEmail = document.getElementById('targetEmail').value;
         const type = document.getElementById('type').value;
+        const message = document.getElementById('message').value;
 
-        alert(`Thank you, ${name}! Your inquiry about '${type}' has been received. We will be in touch soon!`);
+        if(!name || !message) {
+            alert('Please fill out your Name and Message before sending.');
+            return;
+        }
 
-        this.reset();
-    });
+        const subject = encodeURIComponent(`Inquiry from Website: ${type} (${name})`);
+        const body = encodeURIComponent(`Name: ${name}\nContact: ${contact}\nInquiry Type: ${type}\n\nMessage:\n${message}`);
+        
+        window.location.href = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
+    }
+
+    function sendViaWhatsApp() {
+        const name = document.getElementById('name').value;
+        const contact = document.getElementById('email').value;
+        const type = document.getElementById('type').value;
+        const message = document.getElementById('message').value;
+
+        if(!name || !message) {
+            alert('Please fill out your Name and Message before sending.');
+            return;
+        }
+
+        const text = encodeURIComponent(`*New Website Inquiry*\n\n*Name:* ${name}\n*Contact:* ${contact}\n*Type:* ${type}\n\n*Message:*\n${message}`);
+        
+        window.open(`https://wa.me/254795691073?text=${text}`, '_blank');
+    }
 </script>
 
 </body>
